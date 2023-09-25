@@ -52,7 +52,7 @@ int onegin_ctor(Onegin* onegin, const char* filename)
 
 int file_open(Onegin* onegin, const char* filename)
 {
-      onegin->mainfile = fopen(filename, "r");
+      onegin->mainfile = fopen(filename, "r+");
 
       if (onegin->mainfile == nullptr)
       {
@@ -100,7 +100,7 @@ int chars_buffer(Onegin* onegin, FILE* filename)
 
       num_of_strings(onegin);
 
-      if(fread_count != onegin->chars_num - onegin->strings_num)
+      if(fread_count != (onegin->chars_num - onegin->strings_num))
       {
             onegin->error_code = ERROR_FREAD_COUNT;
             onegin_dtor(onegin);
@@ -153,8 +153,7 @@ int fill_structs_arr(Onegin* onegin)
             onegin->structs_arr[i].str_len = strlen(onegin->buffer_ptr + counter);
 
             counter += onegin->structs_arr[i].str_len + 1;
-      }
-
+      };
       return 0;
 }
 
@@ -229,9 +228,10 @@ void onegin_dtor(Onegin* onegin)
 
             case(ERROR_FREAD_COUNT):
             {
-                  onegin->error_code = 0;
-                  onegin->chars_num  = 0;
-
+                  onegin->error_code      = 0;
+                  onegin->strings_num     = 0;
+                  onegin->chars_num       = 0;
+                  
                   fclose(onegin->mainfile);
                   onegin->mainfile   = nullptr;
 

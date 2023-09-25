@@ -36,7 +36,7 @@ int right_comp(const void* first_struct, const void* second_struct);
 //=============================================================================================================
 
 /**
- * @brief Calls the function qsort and writes sorted text to the file "Sorted from left to right.txt".???
+ * @brief Calls the function qsort.
  * 
  * @param onegin The pointer to the structure
  * @return int 
@@ -47,7 +47,7 @@ int left_sorting(Onegin* onegin);
 //=============================================================================================================
 
 /**
- * @brief Calls the function qsort and writes sorted text to the file "Sorted from right to left.txt". ???
+ * @brief Calls the function qsort.
  * 
  * @param onegin The pointer to the structure
  * @return int 
