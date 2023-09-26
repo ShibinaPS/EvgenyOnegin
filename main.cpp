@@ -77,7 +77,7 @@ int main()
 
 		default:
 		{
-			printf("Undefined error!\n");
+			printf("Error: %d\n", ERROR_UNKNOWN_ERROR);
 			return 0;
 		}
 	}

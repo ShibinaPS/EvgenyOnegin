@@ -43,8 +43,6 @@ int onegin_ctor(Onegin* onegin, const char* filename)
             return ERROR_STRUCTS_ARRAY_NULLPTR;
       }
 
-      // printf("%d\n", onegin->strings_num);
-
       return 0;
 }
 

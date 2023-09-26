@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys\stat.h>
+#include <sys/stat.h>
 #include <string.h>
 #include <cctype>
 
@@ -51,6 +51,7 @@ enum OneginErrors
       ERROR_LEFT_COMP_NULLPTR       = 6,
       ERROR_RIGHT_COMP_NULLPTR      = 7,
       ERROR_SORTING_CHOICE          = 8,
+      ERROR_UNKNOWN_ERROR           = 9,
 };
 
 //=============================================================================================================
